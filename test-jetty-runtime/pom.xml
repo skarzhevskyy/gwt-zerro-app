@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0">
+    <!-- @version $Revision: 12195 $ ($Author: vlads $) $Date: 2012-11-28 17:27:23 -0500 (Wed, 28 Nov 2012) $ -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.pyx4j.test</groupId>
+        <artifactId>test-gwt-app</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--pyx-test-version-->
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>test-jetty-runtime</artifactId>
+    <name>test-jetty-runtime</name>
+    <description>jetty runtime dependency collection</description>
+
+    <dependencies>
+
+		<dependency>
+    		<groupId>javax.servlet</groupId>
+    		<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+            
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jettyVersion}</version>
+            <exclusions>
+            	<exclusion>
+      				<groupId>org.eclipse.jetty.orbit</groupId>
+      				<artifactId>javax.servlet</artifactId>
+      			</exclusion>
+    		</exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>${jettyVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-rewrite</artifactId>
+            <version>${jettyVersion}</version>
+            <exclusions>
+            	<exclusion>
+      				<groupId>org.eclipse.jetty.orbit</groupId>
+      				<artifactId>javax.servlet</artifactId>
+      			</exclusion>
+    		</exclusions>            
+        </dependency>
+
+    </dependencies>
+
+
+</project>

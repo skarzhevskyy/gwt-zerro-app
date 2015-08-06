@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.0.0/distro-source/core/src/gwt-module.dtd">
+<!-- @version $Revision: 12150 $ ($Author: vlads $) $Date: 2012-11-11 15:10:53 -0500 (Sun, 11 Nov 2012) $ -->
+<module rename-to='test'>
+    <inherits name='com.google.gwt.user.User'/>
+
+    <inherits name='com.pyx4j.test.Shared'/>
+
+    <inherits name="com.google.gwt.i18n.I18N"/>
+
+    <inherits name="com.google.gwt.user.Debug"/>
+
+    <extend-property name="locale" values="en_US"/>
+    <set-property-fallback name="locale" value="en_US"/>
+    <set-property name="locale" value="en_US"/>
+
+    <set-property name="user.agent" value="safari,gecko1_8,ie9"/>
+
+    <source path="client"/>
+
+    <entry-point class='com.pyx4j.test.client.TestClient'/>
+
+    <inherits name='com.pyx4j.test.RPCBlacklist'/>
+ 
+    <extend-configuration-property name="rpc.blacklist" value="com.pyx4j.test.client.*" />
+
+</module>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.0.0/distro-source/core/src/gwt-module.dtd">
+<!-- @version $Revision: 12160 $ ($Author: vlads $) $Date: 2012-11-18 17:59:56 -0500 (Sun, 18 Nov 2012) $ -->
+<module>
+
+    <inherits name='com.google.gwt.user.User'/>
+
+    <source path="domain"/>
+    <source path="rpc"/>
+
+
+    <!-- devmode broken: http://code.google.com/p/google-web-toolkit/issues/detail?id=7481  -->
+<!--
+    <inherits name='elemental.Elemental'/>
+    <source path="elemental"/>
+-->
+
+    <extend-configuration-property name="rpc.blacklist" value="javax.validation.*" />
+
+
+    <extend-configuration-property name="rpc.blacklist" value="com.pyx4j.test.domain.simple.impl.XSerialExtValueMap" />
+
+</module>

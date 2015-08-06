@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app
+    version="2.5"
+    xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
+    <!--
+		@version $Revision: 12140 $ ($Author: vlads $) $Date: 2012-11-09 00:02:56 -0500 (Fri, 09 Nov 2012) $
+	-->
+    <display-name>Pyx test ${buildLabel} svn:${scm.revision} ts:${timestamp}</display-name>
+
+
+    <servlet>
+        <servlet-name>SimpleServiceImpl</servlet-name>
+        <servlet-class>com.pyx4j.test.server.service.simple.SimpleServiceImpl</servlet-class>
+    </servlet>
+  
+    <servlet-mapping>
+        <servlet-name>SimpleServiceImpl</servlet-name>
+        <url-pattern>/test/simple</url-pattern>
+    </servlet-mapping>
+
+    <!-- Default page to serve -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+
+</web-app>

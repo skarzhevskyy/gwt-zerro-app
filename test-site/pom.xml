@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0">
+    <!-- @version $Revision: 12140 $ ($Author: vlads $) $Date: 2012-11-09 00:02:56 -0500 (Fri, 09 Nov 2012) $ -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.pyx4j.test</groupId>
+        <artifactId>test-gwt-app</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--pyx-test-version-->
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+	<artifactId>test-site</artifactId>
+	<name>test-site</name>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+        <dependency>
+            <groupId>com.pyx4j.test</groupId>
+            <artifactId>test-shared</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+	</dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>clean.app-gwt-generated</id>
+                        <phase>clean</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+                                <delete quiet="true" includeemptydirs="true">
+                                    <fileset dir="${basedir}/../test-server-jetty/war/g.site"/>
+                                </delete>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+	</build>
+
+    <profiles>
+        <profile>
+            <id>gwtc</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>gwt-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-java2script</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <module>g.site</module>
+                            <logLevel>INFO</logLevel>
+                            <style>${gwtCompilerOutputStyle}</style>
+                            <webappDirectory>${basedir}/../mon-server/src/main/webapp</webappDirectory>
+                            <generated>${project.build.directory}/gwt-generated</generated>
+                            <compilerClass>com.google.gwt.dev.Compiler</compilerClass>
+                            <!--compilerClass>com.google.gwt.dev.GWTCompiler</compilerClass-->
+                            <localWorkers>${gwtLocalWorkers}</localWorkers>
+                            <draftCompile>${gwtDraftCompile}</draftCompile>
+                            <compileReport>${gwtCompileReport}</compileReport>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
