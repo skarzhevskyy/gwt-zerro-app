@@ -66,7 +66,6 @@
 
     <repositories>
 
-<!--
         <repository>
             <id>gwt-snapshots</id>
             <name>GWT Snapshots</name>
@@ -78,12 +77,11 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
--->
 
     </repositories>
 
     <properties>
-        <gwtVersion>2.7.0</gwtVersion>
+        <gwtVersion>2.8.0-SNAPSHOT</gwtVersion>
         <jettyVersion>9.2.3.v20140905</jettyVersion>
 
         <!-- Used for speed up the GWT compiler for developers -->
