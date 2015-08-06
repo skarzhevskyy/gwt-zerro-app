@@ -81,6 +81,7 @@
     </repositories>
 
     <properties>
+
         <gwtVersion>2.8.0-SNAPSHOT</gwtVersion>
         <jettyVersion>9.2.3.v20140905</jettyVersion>
 
