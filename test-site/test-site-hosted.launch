@@ -17,7 +17,7 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="com.google.gdt.eclipse.maven.mavenClasspathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.google.gwt.dev.DevMode"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-codeServerPort 9991 -remoteUI &quot;${gwt_remote_ui_server_port}:${unique_id}&quot; -startupUrl http://localhost:8881/test/index.html -logLevel INFO -noserver -extra &quot;${workspace_loc:test-site}/target/hosted-extra&quot; -gen &quot;${workspace_loc:test-site}/target/hosted-gen&quot; -war &quot;${workspace_loc:test-server-jetty}/src/main/webapp&quot; com.pyx4j.test.Client"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-port 9876 -nosuperDevMode -codeServerPort 9991 -remoteUI &quot;${gwt_remote_ui_server_port}:${unique_id}&quot; -startupUrl http://localhost:8881/test/index.html -logLevel INFO -noserver -extra &quot;${workspace_loc:test-site}/target/hosted-extra&quot; -gen &quot;${workspace_loc:test-site}/target/hosted-gen&quot; -war &quot;${workspace_loc:test-server-jetty}/src/main/webapp&quot; com.pyx4j.test.Client"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="test-site"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m"/>
 </launchConfiguration>
